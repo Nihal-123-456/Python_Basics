@@ -9,7 +9,8 @@ def user_choice_input():
     4. For division press 4
     '''
     )
-    user_choice_action(user_choice)
+    output = user_choice_action(user_choice)
+    return output
 
 def user_choice_action(user_choice):
     if user_choice == '1':
@@ -17,7 +18,7 @@ def user_choice_action(user_choice):
         Please enter the numbers you want to add
         Make sure they are separated by space
         ''')
-        print(add(nums))
+        return add(nums)
 
     elif user_choice == '2':
         num1 = int(input('''
@@ -25,14 +26,14 @@ def user_choice_action(user_choice):
         First enter the minuend :               
         '''))
         num2 = int(input('Now enter the subtraend : '))
-        print(subtract(num1, num2))
+        return subtract(num1, num2)
 
     elif user_choice == '3':
         nums = input('''
         Please enter the numbers you want to multiply
         Make sure they are separated by space
         ''')
-        print(multiply(nums))
+        return multiply(nums)
 
     elif user_choice == '4':
         num1 = int(input('''
@@ -40,7 +41,7 @@ def user_choice_action(user_choice):
         First enter the dividend :               
         '''))
         num2 = int(input('Now enter the divisor : '))
-        print(divide(num1, num2))
+        return divide(num1, num2)
 
     else:
-        print('Invalid input')
+        return 'Invalid input'
